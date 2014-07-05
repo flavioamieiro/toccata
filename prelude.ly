@@ -26,8 +26,8 @@ bass = \new Voice \relative c' {
 }
 
 \header {
-  title = ""
-  composer = ""
+  title = "Prelude"
+  composer = "Elias Tandel Barrionovo"
   tagline = ""
 }
 
