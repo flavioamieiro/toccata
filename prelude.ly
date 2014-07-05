@@ -1,6 +1,7 @@
 \version "2.16.2"
 
 melody = \new Voice \relative c' {
+  \voiceOne
   \tempo 4 = 92
 
   \partial 4 g'4
@@ -16,6 +17,7 @@ melody = \new Voice \relative c' {
 }
 
 bass = \new Voice \relative c' {
+  \voiceTwo
   \partial 4 r4
   c1 | c | f, | g |
   c | c | bes | d |
