@@ -1,19 +1,28 @@
 \version "2.16.2"
 
 melody = \new Voice \relative c' {
-  g' c bes e d a' a g e d e < g, d' >
-  g c bes e d a' a g g f e < f d >
-  f f e d c d d d c bes a a
-  g a bes a bes c bes c d
-  c d e d e f e f g r fis r < d g >
+  \tempo 4 = 92
+
+  \partial 4 g'4
+  c bes e d |  a'2. a4 | g e d e |
+  < g, d' >2. g4 | c bes e d | a'2. a4 | g g f e |
+  < f d >2. f4 | f e d c | d2. d4 | d c bes a |
+
+  \time 3/4
+  a g a | bes a bes | c bes c | d c d | e d e | f e f |
+
+  \tempo 4 = 50
+  g2( < g g, >4) | fis2( < fis g, >4) | < bes, d g >2.
 }
 
 bass = \new Voice \relative c' {
-  r c r r r r r f, r r r g
-  r c r r r r r bes r r r d
-  r r r r r bes r r r r r a
-  r r bes r r b r r c
-  r r cis r r d r r dis g d g < g, bes' >
+  \partial 4 r4
+  c1 | c | f, | g |
+  c | c | bes | d |
+  d | bes | bes
+
+  \time 3/4
+  a2. bes b c cis d dis d g,
 }
 
 \header {
@@ -31,13 +40,14 @@ bass = \new Voice \relative c' {
 }
 
 \score{
-  {
-    \new Staff <<
-      \key f \major
-      \melody
-      \bass
-    >>
-  }
+  \new Staff <<
+    \key f \major
+    \melody
+    \bass
+  >>
+
   \layout{}
-  \midi {}
+  \midi {
+    \set Staff.midiInstrument = #"guitar"
+  }
 }
